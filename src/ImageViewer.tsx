@@ -67,6 +67,7 @@ export const ImageViewer: FC<ImageViewerProps> = (props) => {
       }}
     >
       <img
+        key={imageUrl}
         src={imageUrl}
         alt={imageName}
         ref={setImageRef}

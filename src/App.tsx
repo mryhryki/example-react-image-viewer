@@ -8,20 +8,13 @@ export const App: FC = () => {
   return (
     <main
       style={{
-        width: "100vw",
-        maxWidth: "1200px",
         margin: "0 auto",
+        maxWidth: "1200px",
         overflow: "hidden",
+        width: "100vw",
       }}
     >
-      <h1
-        style={{
-          margin: 0,
-          fontSize: "1.5rem",
-          lineHeight: "2",
-          textAlign: "center",
-        }}
-      >
+      <h1 style={{ textAlign: "center" }}>
         example-react-image-viewer
       </h1>
       <div style={{ textAlign: "center" }}>
@@ -42,12 +35,19 @@ export const App: FC = () => {
       </div>
 
       {/* Image viewer */}
-      <div style={{ width: "100%", height: "80vh", backgroundColor: "#666" }}>
+      <div
+        style={{
+          width: "100%",
+          height: "80vh",
+          backgroundColor: "#666",
+          overscrollBehavior: "none",
+        }}
+      >
         <ImageViewer image={image} />
       </div>
 
       <ul>
-        <li>Drag: Move image in view area</li>
+        <li>Drag: Move the image in view area</li>
         <li>Scroll: Zoom in/out in view area</li>
         <li>Double click: Fit to view area (Reset position and zoom ratio)</li>
       </ul>

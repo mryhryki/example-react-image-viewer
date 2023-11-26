@@ -42,9 +42,11 @@ export const useZoomAction = (args: UseZoomActionArgs): void => {
 
   useEffect(() => {
     if (wrapperRef == null) return;
-    const onWheel = ({ deltaY }: WheelEvent) => {
+    const onWheel = (event: WheelEvent) => {
+      event.preventDefault();
+      // event.stopPropagation();
       zoom((prevZoomRatio, clamp) =>
-        clamp(prevZoomRatio * (deltaY * -0.001 + 1))
+        clamp(prevZoomRatio * (event.deltaY * -0.001 + 1))
       );
     };
     wrapperRef.addEventListener("wheel", onWheel);
