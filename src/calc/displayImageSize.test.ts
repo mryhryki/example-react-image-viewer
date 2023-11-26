@@ -1,8 +1,8 @@
-import { describe, it, expect } from "vitest";
-import { ElementSize } from '../util/size';
-import { calcDisplayImageSize } from './displayImageSize';
+import { describe, expect, it } from "vitest";
+import { ElementSize } from "../util/size";
+import { calcDisplayImageSize } from "./displayImageSize";
 
-describe('calcDisplayImageSize', () => {
+describe("calcDisplayImageSize", () => {
   type Elements = [
     ElementSize,
     /* zoomRatio: */ number,

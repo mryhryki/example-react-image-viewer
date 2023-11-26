@@ -31,8 +31,8 @@ export const useMousePosition = (
     const onMouseOver = (event: MouseEvent) => {
       const { target, clientX: mouseX, clientY: mouseY } = event;
       if (!(target instanceof HTMLElement)) return;
-      const { y: wrapperTop, x: wrapperLeft } =
-        wrapperRef.getBoundingClientRect();
+      const { y: wrapperTop, x: wrapperLeft } = wrapperRef
+        .getBoundingClientRect();
       const innerX = mouseX - wrapperLeft;
       const innerY = mouseY - wrapperTop;
       const x = innerX - wrapperSize.width / 2;
@@ -56,8 +56,8 @@ export const useMousePosition = (
   useEffect(() => {
     if (wrapperRef == null) return;
     const onScroll = (event: Event) => {
-      event.preventDefault()
-      event.stopPropagation()
+      event.preventDefault();
+      event.stopPropagation();
     };
     wrapperRef.addEventListener("scroll", onScroll);
     return () => wrapperRef.removeEventListener("scroll", onScroll);

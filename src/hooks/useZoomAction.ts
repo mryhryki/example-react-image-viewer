@@ -44,7 +44,7 @@ export const useZoomAction = (args: UseZoomActionArgs): void => {
     if (wrapperRef == null) return;
     const onWheel = ({ deltaY }: WheelEvent) => {
       zoom((prevZoomRatio, clamp) =>
-        clamp(prevZoomRatio * (deltaY * -0.001 + 1)),
+        clamp(prevZoomRatio * (deltaY * -0.001 + 1))
       );
     };
     wrapperRef.addEventListener("wheel", onWheel);

@@ -6,7 +6,6 @@ interface UseFitToScreenArgs {
   wrapperRef: HTMLDivElement | null;
 }
 
-
 export const useFitToScreen = (
   args: UseFitToScreenArgs,
 ): void => {

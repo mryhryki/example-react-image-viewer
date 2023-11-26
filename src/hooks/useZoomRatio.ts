@@ -1,6 +1,6 @@
-import { useCallback, useRef } from 'react';
-import { useRerender } from './useRerender';
-import { ElementSize } from '../util/size';
+import { useCallback, useRef } from "react";
+import { useRerender } from "./useRerender";
+import { ElementSize } from "../util/size";
 
 export type SetZoomRatioType = (
   callback: (
@@ -45,13 +45,14 @@ export const useZoomRatio = (args: UseZoomRatioArgs): UseZoomRatioState => {
   const zoomRatio: number = zoomRatioMap.current[imageUrl] ?? DefaultZoomRatio;
 
   const clampZoomRatio = useCallback(
-    (zoomRatio: number): number => Math.min(Math.max(zoomRatio, MinZoomRatio), maxZoomRatio),
+    (zoomRatio: number): number =>
+      Math.min(Math.max(zoomRatio, MinZoomRatio), maxZoomRatio),
     [maxZoomRatio],
   );
   const setZoomRatio: SetZoomRatioType = useCallback(
     (callback): void => {
-      const prevZoomRatio: number =
-        zoomRatioMap.current[imageUrl] ?? DefaultZoomRatio;
+      const prevZoomRatio: number = zoomRatioMap.current[imageUrl] ??
+        DefaultZoomRatio;
       const nextZoomRatio = clampZoomRatio(
         callback(prevZoomRatio, clampZoomRatio),
       );

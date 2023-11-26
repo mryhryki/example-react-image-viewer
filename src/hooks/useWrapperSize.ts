@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { ElementSize } from '../util/size';
+import { useEffect, useState } from "react";
+import { ElementSize } from "../util/size";
 
 interface UseWrapperSizeArgs {
   wrapperRef: HTMLDivElement | null;

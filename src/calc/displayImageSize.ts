@@ -1,4 +1,4 @@
-import { ElementSize } from '../util/size';
+import { ElementSize } from "../util/size";
 
 interface CalcDisplayImageSizeArgs {
   baseImageSize: ElementSize;

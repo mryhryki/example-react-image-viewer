@@ -23,7 +23,11 @@ export const ImageViewer: FC<ImageViewerProps> = (props) => {
   const { getMousePosition } = useMousePosition({ wrapperRef, wrapperSize });
 
   const { naturalImageSize, setImageRef } = useImageSize();
-  const { resetZoomRatio, setZoomRatio, zoomRatio } = useZoomRatio({ imageUrl, naturalImageSize, wrapperSize });
+  const { resetZoomRatio, setZoomRatio, zoomRatio } = useZoomRatio({
+    imageUrl,
+    naturalImageSize,
+    wrapperSize,
+  });
 
   const baseImageSize = calcBaseImageSize({
     wrapperSize,

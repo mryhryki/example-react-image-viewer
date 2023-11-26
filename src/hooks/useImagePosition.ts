@@ -54,8 +54,8 @@ export const useImagePosition = (
   // This state is used `useRef` instead of `useState` because this state is high frequency updated
   //   and callback (`setState((value) => ...)`) sometimes receives the value that is not latest.
   const imagePositionMap = useRef<ImagePositionMap>({});
-  const imagePosition: ElementPosition =
-    imagePositionMap.current[imageUrl] ?? InitialMovedDiff;
+  const imagePosition: ElementPosition = imagePositionMap.current[imageUrl] ??
+    InitialMovedDiff;
   const prevImagePosition = useRef<ElementPosition>(InitialMovedDiff);
 
   const rerender = useRerender();
@@ -132,12 +132,10 @@ export const useImagePosition = (
 
   return {
     imagePosition: {
-      x:
-        wrapperCenterPosition.x +
+      x: wrapperCenterPosition.x +
         imagePosition.x -
         Math.round(displayImageStyle.width / 2),
-      y:
-        wrapperCenterPosition.y +
+      y: wrapperCenterPosition.y +
         imagePosition.y -
         Math.round(displayImageStyle.height / 2),
     },

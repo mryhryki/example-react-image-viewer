@@ -1,4 +1,4 @@
-import { ElementSize } from './size';
+import { ElementSize } from "./size";
 
 export interface ElementPosition {
   x: number;

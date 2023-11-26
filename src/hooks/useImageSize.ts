@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { ElementSize } from '../util/size';
+import { useEffect, useState } from "react";
+import { ElementSize } from "../util/size";
 
 interface UseImageRefState {
   naturalImageSize: ElementSize;
@@ -10,8 +10,9 @@ const InitialSize: ElementSize = { width: 100, height: 100 };
 
 export const useImageSize = (): UseImageRefState => {
   const [imageRef, setImageRef] = useState<HTMLImageElement | null>(null);
-  const [naturalImageSize, setNaturalImageSize] =
-    useState<ElementSize>(InitialSize);
+  const [naturalImageSize, setNaturalImageSize] = useState<ElementSize>(
+    InitialSize,
+  );
 
   useEffect(() => {
     if (imageRef == null) return;
@@ -22,9 +23,9 @@ export const useImageSize = (): UseImageRefState => {
       const height = Math.max(naturalHeight, 100);
       setNaturalImageSize({ width, height });
     };
-    imageRef.addEventListener('load', onLoad);
+    imageRef.addEventListener("load", onLoad);
     onLoad();
-    return () => imageRef.removeEventListener('load', onLoad);
+    return () => imageRef.removeEventListener("load", onLoad);
   }, [imageRef]);
 
   return { naturalImageSize, setImageRef };

@@ -6,17 +6,33 @@ export const App: FC = () => {
   const [image, setImage] = useState(Images[0]);
 
   return (
-    <main style={{ width: "100vw", maxWidth: "1200px", margin: "0 auto", overflow: "hidden" }}>
+    <main
+      style={{
+        width: "100vw",
+        maxWidth: "1200px",
+        margin: "0 auto",
+        overflow: "hidden",
+      }}
+    >
       <h1
-        style={{ margin: 0, fontSize: "1.5rem", lineHeight: "2", textAlign: "center" }}>example-react-image-viewer</h1>
-      <div>
-        <select onChange={(event) => {
-          const imageUrl = event.target.value;
-          const image = Images.find((image) => image.url === imageUrl);
-          if (image == null) return;
-          setImage(image);
-
-        }}>
+        style={{
+          margin: 0,
+          fontSize: "1.5rem",
+          lineHeight: "2",
+          textAlign: "center",
+        }}
+      >
+        example-react-image-viewer
+      </h1>
+      <div style={{ textAlign: "center" }}>
+        <select
+          onChange={(event) => {
+            const imageUrl = event.target.value;
+            const image = Images.find((image) => image.url === imageUrl);
+            if (image == null) return;
+            setImage(image);
+          }}
+        >
           {Images.map((image) => (
             <option key={image.url} value={image.url}>
               {image.name}
