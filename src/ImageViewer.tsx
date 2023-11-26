@@ -65,9 +65,12 @@ export const ImageViewer: FC<ImageViewerProps> = (props) => {
         position: "relative",
         width: "100%",
       }}
-      draggable={false}
     >
-      <div
+      <img
+        src={imageUrl}
+        alt={imageName}
+        ref={setImageRef}
+        draggable={false}
         style={{
           top: imagePosition.y,
           left: imagePosition.x,
@@ -76,19 +79,7 @@ export const ImageViewer: FC<ImageViewerProps> = (props) => {
           objectFit: "contain",
           position: "absolute",
         }}
-        draggable={false}
-      >
-        <img
-          src={imageUrl}
-          alt={imageName}
-          ref={setImageRef}
-          draggable={false}
-          style={{
-            width: displayImageStyle.width,
-            height: displayImageStyle.height,
-          }}
-        />
-      </div>
+      />
     </div>
   );
 };
