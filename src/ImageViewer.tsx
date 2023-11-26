@@ -9,13 +9,14 @@ import { useWrapperSize } from "./hooks/useWrapperSize";
 import { useZoomRatio } from "./hooks/useZoomRatio";
 import { useMousePosition } from "./hooks/useMousePotision";
 import { useZoomAction } from "./hooks/useZoomAction";
+import { Image } from "./images.ts";
 
 interface ImageViewerProps {
-  imageUrl: string;
+  image: Image;
 }
 
 export const ImageViewer: FC<ImageViewerProps> = (props) => {
-  const { imageUrl } = props;
+  const { url: imageUrl, name: imageName } = props.image;
 
   const { wrapperRef, setWrapperRef } = useElementRefs();
   const { wrapperSize } = useWrapperSize({ wrapperRef });
@@ -75,7 +76,7 @@ export const ImageViewer: FC<ImageViewerProps> = (props) => {
       >
         <img
           src={imageUrl}
-          alt="Selcted image"
+          alt={imageName}
           ref={setImageRef}
           draggable={false}
           style={{
