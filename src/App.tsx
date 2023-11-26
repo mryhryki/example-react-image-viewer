@@ -43,7 +43,7 @@ export const App: FC = () => {
 
       {/* Image viewer */}
       <div style={{ width: "100%", height: "80vh", backgroundColor: "#666" }}>
-        <ImageViewer image={image}/>
+        <ImageViewer image={image} />
       </div>
 
       <ul>
